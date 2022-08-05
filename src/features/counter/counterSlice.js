@@ -1,3 +1,4 @@
+//createSliceをインポート
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { fetchCount } from './counterAPI';
 
@@ -24,6 +25,7 @@ export const counterSlice = createSlice({
   name: 'counter',
   initialState,
   // The `reducers` field lets us define reducers and generate associated actions
+  //reducersを定義　increment アクション等
   reducers: {
     increment: (state) => {
       // Redux Toolkit allows us to write "mutating" logic in reducers. It
@@ -36,6 +38,7 @@ export const counterSlice = createSlice({
       state.value -= 1;
     },
     // Use the PayloadAction type to declare the contents of `action.payload`
+    //アクションはpayloadに引数を持てる
     incrementByAmount: (state, action) => {
       state.value += action.payload;
     },
@@ -54,6 +57,7 @@ export const counterSlice = createSlice({
   },
 });
 
+//アクションをエクスポート
 export const { increment, decrement, incrementByAmount } = counterSlice.actions;
 
 // The function below is called a selector and allows us to select a value from
